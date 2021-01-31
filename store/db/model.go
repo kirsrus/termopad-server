@@ -3,7 +3,7 @@ package db
 import (
 	"time"
 
-	"github.com/kirsrus/termopad/server2/model"
+	"github.com/kirsrus/termopad-server/model"
 )
 
 type (

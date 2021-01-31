@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/kirsrus/termopad/server2/service/web/graph/generated"
-	"github.com/kirsrus/termopad/server2/service/web/graph/model"
+	"github.com/kirsrus/termopad-server/service/web/graph/generated"
+	"github.com/kirsrus/termopad-server/service/web/graph/model"
 )
 
 func (r *queryResolver) Config(ctx context.Context) (*model.Config, error) {

@@ -1,0 +1,9 @@
+.idea/
+.material/
+assets/
+imagedb/
+vendor/
+*.prod.*
+*.sqlite
+*.log
+*.exe

@@ -13,11 +13,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kirsrus/termopad/server2/model"
-	"github.com/kirsrus/termopad/server2/pkg/config"
-	"github.com/kirsrus/termopad/server2/pkg/tool"
-	"github.com/kirsrus/termopad/server2/pkg/validator"
-	"github.com/kirsrus/termopad/server2/store"
+	"github.com/kirsrus/termopad-server/model"
+	"github.com/kirsrus/termopad-server/pkg/config"
+	"github.com/kirsrus/termopad-server/pkg/tool"
+	"github.com/kirsrus/termopad-server/pkg/validator"
+	"github.com/kirsrus/termopad-server/store"
 
 	"github.com/juju/errors"
 	"github.com/sirupsen/logrus"

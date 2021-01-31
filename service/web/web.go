@@ -9,12 +9,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kirsrus/termopad/server2/model"
-	"github.com/kirsrus/termopad/server2/pkg/validator"
-	"github.com/kirsrus/termopad/server2/service"
-	"github.com/kirsrus/termopad/server2/service/web/graph"
-	"github.com/kirsrus/termopad/server2/service/web/graph/generated"
-	"github.com/kirsrus/termopad/server2/store"
+	"github.com/kirsrus/termopad-server/model"
+	"github.com/kirsrus/termopad-server/pkg/validator"
+	"github.com/kirsrus/termopad-server/service"
+	"github.com/kirsrus/termopad-server/service/web/graph"
+	"github.com/kirsrus/termopad-server/service/web/graph/generated"
+	"github.com/kirsrus/termopad-server/store"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/extension"

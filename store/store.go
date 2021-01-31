@@ -3,7 +3,7 @@ package store
 import (
 	"time"
 
-	"github.com/kirsrus/termopad/server2/model"
+	"github.com/kirsrus/termopad-server/model"
 )
 
 // DbStore репозирторий общения с БД

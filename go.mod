@@ -1,4 +1,4 @@
-module github.com/kirsrus/termopad/server2
+module github.com/kirsrus/termopad-server
 
 go 1.15
 

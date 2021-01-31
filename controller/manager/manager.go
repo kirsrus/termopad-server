@@ -6,11 +6,11 @@ import (
 	"math"
 	"time"
 
-	"github.com/kirsrus/termopad/server2/controller"
-	"github.com/kirsrus/termopad/server2/model"
-	"github.com/kirsrus/termopad/server2/pkg/validator"
-	"github.com/kirsrus/termopad/server2/service"
-	"github.com/kirsrus/termopad/server2/store"
+	"github.com/kirsrus/termopad-server/controller"
+	"github.com/kirsrus/termopad-server/model"
+	"github.com/kirsrus/termopad-server/pkg/validator"
+	"github.com/kirsrus/termopad-server/service"
+	"github.com/kirsrus/termopad-server/store"
 
 	"github.com/juju/errors"
 	"github.com/labstack/echo"

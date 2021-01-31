@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kirsrus/termopad/server2/model"
+	"github.com/kirsrus/termopad-server/model"
 
 	"github.com/juju/errors"
 	"github.com/k0kubun/pp"

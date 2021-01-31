@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/kirsrus/termopad/server2/model"
-	modelGraphQl "github.com/kirsrus/termopad/server2/service/web/graph/model"
-	"github.com/kirsrus/termopad/server2/store"
+	"github.com/kirsrus/termopad-server/model"
+	modelGraphQl "github.com/kirsrus/termopad-server/service/web/graph/model"
+	"github.com/kirsrus/termopad-server/store"
 
 	"github.com/juju/errors"
 	"github.com/sirupsen/logrus"

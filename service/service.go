@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/kirsrus/termopad/server2/model"
+	"github.com/kirsrus/termopad-server/model"
 )
 
 // WebSvc серис общения с WEB интерфейсом

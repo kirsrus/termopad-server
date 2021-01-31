@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/kirsrus/termopad/server2/model"
+	"github.com/kirsrus/termopad-server/model"
 )
 
 // TermopadCtl контроллер управления термопадами
