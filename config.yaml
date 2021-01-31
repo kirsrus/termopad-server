@@ -1,0 +1,107 @@
+# Секрция описания логирования
+log:
+  path:
+  filename: log.log
+  level: debug
+  console: true
+
+# Секция описания подключения к базе данных
+db:
+  # База данных (поддерживаются sqlite)
+  type: sqlite
+  path:
+  filename: termopad.sqlite
+  # Колличество дней хранения архива (в днях)
+  archivedays: 30
+  # Интервал начала очистки архива (в минутах)
+  cleanarchiveinterval: 60
+
+# Секция описания хранения изображений с термопада
+images:
+  # Корневая директория с базой фотографий
+  path: ./imagedb/temperature
+
+# Секция описания подключения к термопадам
+termopad:
+  # Таймаут обращения к термпоаду, когда он считается недоступным (в секундах)
+  timeoutalive: 3
+  # Таймаут потокового опроса термопада при выявляении изменений
+  timeout: 1
+  # Максимальная нормальная температура
+  maxtemperature: 37.7
+  # Минимальная нормальная температура
+  mintemperature: 35.0
+  # Информация об всех термопадах
+  info:
+    - id: 1
+      cabina: 0
+      address: ws://127.0.0.1:11000/feed
+      name: Кабина 0
+    - id: 2
+      cabina: 4
+      address: ws://127.0.0.1:11001/feed
+      name: Кабина 4
+    - id: 3
+      cabina: 5
+      address: ws://127.0.0.1:11002/feed
+      name: Кабина 5
+    - id: 4
+      cabina: 6
+      address: ws://127.0.0.1:11003/feed
+      name: Кабина 6
+    - id: 5
+      cabina: 7
+      address: ws://127.0.0.1:11004/feed
+      name: Кабина 7
+    - id: 6
+      cabina: 8
+      address: ws://127.0.0.1:11005/feed
+      name: Кабина 8
+    - id: 7
+      cabina: 9
+      address: ws://127.0.0.1:11006/feed
+      name: Кабина 9
+    - id: 8
+      cabina: 10
+      address: ws://127.0.0.1:11007/feed
+      name: Кабина 10
+    - id: 9
+      cabina: 11
+      address: ws://127.0.0.1:11008/feed
+      name: Кабина 11
+    - id: 10
+      cabina: 12
+      address: ws://127.0.0.1:11009/feed
+      name: Кабина 12
+    - id: 11
+      cabina: 13
+      address: ws://127.0.0.1:11010/feed
+      name: Кабина 13
+    - id: 12
+      cabina: 14
+      address: ws://127.0.0.1:11011/feed
+      name: Кабина 14
+
+# Секция настройки сервера WEB-интерфейса
+http:
+  port: 8080
+  assetsdir: assets
+  # Максимальная длинна линии текста в WEB интерфейсе
+  maxlenghtline: 256
+  # Заполненность термопадами страницы
+  termopadsonpage: 16
+  maxtemperature: 37.5
+  mintemperature: 35.0
+
+# Описание данных СУДОС стыковки
+sudos:
+  # Адрес WebSocket канала
+  address: ws://127.0.0.1:34888
+  # Путь к папке и изображениями персон
+  path: ./imagedb/persons
+
+# Сервис распознавания лица
+recognize:
+  url: http://192.168.0.50:2222/msg
+  # Таймаут ожидания ответа (в миллисекундах)
+  timeout: 1500

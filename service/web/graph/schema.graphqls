@@ -1,0 +1,111 @@
+# Конфигуарция
+type Config {
+    termopadsOnPage: Int!  # Минимальное колличество термопадов на странице
+    maxTemperature: Float!  # Максимальная нормальная температура
+    minTemperature: Float!  # Минимальная нормальная термпература
+}
+
+# Данные о термопаде
+type Termopad {
+    id: ID!   # Идентификатор термопада
+    sudosID: Int!  # Идентификатор в системе СУДОС
+    crateAt: String!  # Время создания терминала в текущей сесии работы
+    address: String!  # Адрес термопада формата "192.168.36.6:8000"
+    name: String!  # Имя термопада
+    description: String  # Описание термопада (расположение)
+    maxTemperature: Float!  # Максимальная нормальная температура
+    minTemperature: Float!  # Минимальная нормальная термпература
+}
+
+# Последние персоны, проходившие на замер на термопаде
+type LastPerson {
+    id: ID!  # Идентификатор термопада
+    updateAt: String!  # Последнее время, когда была зафиксированна температура
+    image: String!  # Абсолютный путь к изображению на сервере
+    wigand: String!  # Номер карты вигадна, или unknown в случае пустого
+    wigandFasality: String!  # Разобранный номер виганда - фасалити
+    wigandNumber: String!  # Разобранный номер виганда - номер
+    temperature: Float!  # Температура
+    nameFirst: String
+    nameMiddle: String
+    nameLast: String
+    organization: String
+    departament: String
+    postion: String
+}
+
+# Описание персоны
+type Person {
+    createdAt: String!  # Время добавления данных о персоне
+    updatedAt: String!  # Последнее время изменения данных о персоне
+    image: String!  # Абсолютный путь к изображению персоны на сервере
+    wigand: String!  # Номер карты вигадна, или unknown в случае пустого
+    wigandFasality: String!  # Разобранный номер виганда - фасалити
+    wigandNumber: String!  # Разобранный номер виганда - номер
+    temperature: Float!  # Температура
+    nameFirst: String
+    nameMiddle: String
+    nameLast: String
+    organization: String
+    departament: String
+    postion: String
+}
+
+# Данные о температуре
+type Temperature {
+    id: ID!  # Идентификатор термопада
+    job: String!  # Задача. set - установка полной информации, update - обновление текущей информации
+    update: String!  # Время изменения данных о температуре
+    temperature: Float!  # Температура
+    image: String  # Имя файла с изображением
+    wigand: String!  # Номер карты вигадна, или unknown в случае пустого
+    wigandFasality: String!  # Разобранный номер виганда - фасалити
+    wigandNumber: String!  # Разобранный номер виганда - номер
+    nameFirst: String
+    nameMiddle: String
+    nameLast: String
+    organization: String
+    departament: String
+    postion: String
+}
+
+# Данные о темпе ратуре из лгаф
+type TemperatureLogMetric {
+    date: String!  # Дата замера
+    temperature: Float!  # Температура
+    temperatureMax: Float!  # Максимальная температура за день date
+    temperatureMin: Float!  # Минимальная температура за день date
+    image: String!  # Изображение персоны при измерении
+    pCreateAt: String!
+    pUpdateAt: String!
+    pWigand: Int!  # Номер вигадн персоны
+    pFirstName: String!
+    pMiddleName: String!
+    pLastName: String!
+    pOrganization: String!
+    pDepartament: String!
+    pPosition: String!
+    tID: Int!
+    tURL: String!
+    tSudosID: Int!
+    tName: String!
+    tSerial: String!
+    tDescription: String!
+}
+
+type Query {
+    config: Config!
+    termopads: [Termopad]!
+    termopad(id: ID!): Termopad!  # Описание термопада
+    lastPersons: [LastPerson]!  # Список последних персон, измерившихся на термопадах
+    # Получение лога температуры персоны с id за days дней (со смещением offsetDays) по всем замерам. Если compact=true,
+    # замеры сжимаются только до дней и температура возвращается только в виде максимальной и минимальной за день.
+    personLog(id: ID!, days: Int!, offsetDays: Int!, compact: Boolean!): [TemperatureLogMetric]!
+    # Получение лога температуры термопада с id за days дней (со смещением offsetDays) по всем замерам. Если compact=true,
+    # замеры сжимаются только до дней и температура возвращается только в виде максимальной и минимальной за день.
+    termopadLog(id: ID!, days: Int!, offsetDays: Int!, compact: Boolean!): [TemperatureLogMetric]!
+}
+
+type Subscription {
+    temperatureChanged: Temperature!
+}
